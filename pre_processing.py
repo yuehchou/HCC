@@ -1,4 +1,14 @@
 import numpy as np
+import nrrd
+
+def read_nrrdfile(imglist, inflist, filepath):
+    
+    img, inf = nrrd.read(filepath)
+    imglist.append(img)
+    inflist.append(inf)
+        
+    return imglist, inflist
+
 
 def image_normalize(image, mask, map_min, map_max):
 
